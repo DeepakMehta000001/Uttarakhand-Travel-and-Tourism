@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<html><head><title>{% block head_title %} {% endblock %}Travel and Tourism</title> 
+</head>
+
+ 
+ <body>
+
+ {% block jumbotron %}
+  <div class="jumbotron" >
+	<div class="row">
+	<div class='col-sm-8'>
+ <!-- Main component for a primary marketing message or call to action -->
+      
+        <h2>Uttarakhand Travel and Tourism</h2>
+        <p>A team that cares about the blessings of nature that Uttarakhand posses.</p>
+        <p>Natural Uttarakhand at a glance.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="{% url 'gallery' %}" role="button">Gallery&raquo;</a>
+        </p>
+      </div>
+      <div class='col-sm-4' style="background-color:black;min-height:300px" >
+         <!--iframe width="330" height="300" src="https://www.youtube.com/embed/lNm54uctK1I" frameborder="0" allowfullscreen></iframe-->
+         <iframe width="330" height="300" src="https://www.youtube.com/embed/T0VH342gUkQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+  </div>
+</div>
+     {% endblock %}
+  
+ {% block content %}
+
+     <div class="row">
+     	<div class="col-sm-6 col-md-3 pull-right">
+		 
+		<center><h1>Register here</h1><center>
+		 
+
+		   <form method='POST' action=''>{% csrf_token %}
+		   	
+		   	{{ form|crispy }}
+
+		   	<input class='btn btn-primary'type='submit' value='Sign Up'/>
+
+		   	</form>
+		 </div>
+     {% endblock %}
+</body>
+</html>
